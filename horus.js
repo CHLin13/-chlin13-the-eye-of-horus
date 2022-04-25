@@ -14,12 +14,15 @@ const horus = {
       const fileList = await fsPromise.readdir('./');
       if (fileList.find((name) => name === 'wait')) {
         const file = await fsPromise.readdir('./wait');
-        const data = await Promise.all(
+        const result = await Promise.all(
           file.map(async (file) => {
             const read = await fsPromise.readFile('./wait/' + file);
-            return JSON.parse(read.toString());
+            const arr = read.toString().split(';');
+            arr.splice(-1, 1);
+            return arr;
           })
         );
+        const data = result.flat().map((result) => JSON.parse(result));
 
         data.forEach(async (data) => {
           await axios.post(`${URL}/app/postData`, {
@@ -40,13 +43,23 @@ const horus = {
         name: name,
         value: value,
       });
-      const fileName = Date.now().toString();
+      const today = new Date();
+      const fileName =
+        today.getFullYear() +
+        '-' +
+        (today.getMonth() + 1) +
+        '-' +
+        today.getDate() +
+        '-' +
+        today.getHours();
+
       try {
         const file = await fsPromise.readdir('./');
         if (!file.find((name) => name === 'wait')) {
           await fsPromise.mkdir(path.join('./', 'wait'));
         }
-        await fsPromise.writeFile('./wait/' + fileName + '.txt', str);
+
+        await fsPromise.appendFile('./wait/' + fileName + '.txt', str + ';');
       } catch (error) {
         console.error(`Write file error: ${error}`);
       }
