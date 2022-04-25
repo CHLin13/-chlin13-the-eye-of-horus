@@ -1,4 +1,4 @@
-# The-Eye-of-Horus
+# The Eye of Horus
 
 ```js
 const horus = require('./horus');
