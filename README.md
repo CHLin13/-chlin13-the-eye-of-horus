@@ -1,6 +1,6 @@
 # The-Eye-of-Horus
 
-```
+```js
 const horus = require('./horus');
 
 horus.send(timestamp(nano sec), host name, table name, value, Server running URL);
