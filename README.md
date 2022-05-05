@@ -5,7 +5,7 @@
 ```js
 const horus = require('./horus');
 
-horus.send(timestamp(nano sec), host name, table name, value Server running URL);
+horus.send(timestamp(nano sec), table name, value Server running URL);
 ```
 
 ## Install
@@ -22,5 +22,5 @@ Specify the URL of your Server running URL
 require('./horus').config('http://localhost:3000');
 const horus = require('./horus');
 
-horus.send(timestamp(nano sec), host name, table name, value);
+horus.send(timestamp(nano sec), table name, value);
 ```

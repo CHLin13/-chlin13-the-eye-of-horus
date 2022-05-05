@@ -8,11 +8,10 @@ const config = (url) => {
   URL = url;
 };
 
-const send = async (timestamp, host, name, value) => {
+const send = async (timestamp, name, value) => {
   try {
     await axios.post(`${URL}/app/postData`, {
       timestamp: timestamp,
-      host: host,
       name: name,
       value: value,
     });
@@ -32,7 +31,6 @@ const send = async (timestamp, host, name, value) => {
       data.forEach(async (data) => {
         await axios.post(`${URL}/app/postData`, {
           timestamp: data.timestamp,
-          host: data.host,
           name: data.name,
           value: data.value,
         });
@@ -44,7 +42,6 @@ const send = async (timestamp, host, name, value) => {
     console.error(`Send data error: ${error}`);
     const str = JSON.stringify({
       timestamp: timestamp,
-      host: host,
       name: name,
       value: value,
     });
