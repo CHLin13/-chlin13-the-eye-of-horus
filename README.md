@@ -3,7 +3,7 @@
 
 
 ```js
-const horus = require('./horus');
+const horus = require('@chlin13/the-eye-of-horus');
 
 horus.send(timestamp(nano sec), table name, value, Server running URL);
 ```
@@ -19,8 +19,8 @@ npm i @chlin13/the-eye-of-horus
 ## Options
 Specify the URL of your Server running URL
 ```js
-require('./horus').config('http://localhost:3000');
-const horus = require('./horus');
+require('@chlin13/the-eye-of-horus').config('http://localhost:3000');
+const horus = require('@chlin13/the-eye-of-horus');
 
 horus.send(timestamp(nano sec), table name, value);
 ```
