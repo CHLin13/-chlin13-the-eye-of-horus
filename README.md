@@ -14,7 +14,7 @@ npm i @chlin13/the-eye-of-horus
 ```
 
 ## Features
-*  Post data to influDB
+*  Collecting application performance data
 
 ## Options
 Specify the URL of your Server running URL
