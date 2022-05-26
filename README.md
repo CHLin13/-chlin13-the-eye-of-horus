@@ -1,16 +1,16 @@
 # The Eye of Horus - npm
+```js
+const horus = require('@chlin13/the-eye-of-horus');
+
+horus.send(timestamp(nano sec), table name, value, Server running URL);
+```
+
 ## Features
 *  Collecting application performance data
 
 ## Install
 ```
 npm i @chlin13/the-eye-of-horus
-```
-
-```js
-const horus = require('@chlin13/the-eye-of-horus');
-
-horus.send(timestamp(nano sec), table name, value, Server running URL);
 ```
 
 ## Options
